@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html,body{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main{
+      height: 500px;
+      width: 550px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 40px;
+      box-shadow: 1px 1px 30px aquamarine,
+      1px 2px 20px greenyellow;
+      animation: d1 2s infinite;
+      animation-timing-function: ease-in-out;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes d1 {
+      from{box-shadow: 1px 1px 30px aquamarine,
+        1px 2px 20px greenyellow;}
+        to{
+          box-shadow: 1px 1px 30px palevioletred,
+          1px 2px 20px red;
+        }
+    }
+
+    .photo{
+      height: 100px;
+      width: 100px;
+      background-size: cover;
+      border-radius: 50%;
+      background-image: url(github.jpg);
+      position: absolute;
+      top: 0;
+      margin-top: 20px;
+      box-shadow: 1px 1px 30px aqua,
+      1px 2px 30px greenyellow;
+    }
+    textarea{
+    height: 330px;
+    width: 450px;
+    resize: none;
+    border-radius: 10px;
+    background-color:rgb(208, 154, 255);
+    margin-top: 40px;
+    font-family: ita;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    }
+    button{
+      height: 50px;
+      margin-top: 20px;
+      width: 130px;
+      border-radius: 30px;
+      font-size: 20px;
+      background-color: black;
+      color: aqua;
+      box-shadow: 1px 1px 20px aqua,
+      1px 2px 10px greenyellow;
+      color: black;
+       background-color: greenyellow;
+      border: none;
+      transition-duration: 0.5s;
+    }
+    button:hover{
+      background-color: black;
+      color: aqua;
+    }
+    @font-face {
+      font-family: ita;
+      src: url(cardinalfruitweb-regular.woff2);
+    }
+    @media screen and (max-width:600px) {
+    .navbar{
+        min-width: 200px;
+        text-align: center;
+        overflow: hidden;
+        font-size: 14px;
+    }
+    .navbar p{
+        text-align: center;
+    }
+    body{
+        min-width: 300px;
+        overflow-x: hidden;   
+        min-height: fit-content; 
+        min-width: fit-content;
+        position: fixed;
+    }
+    .main{
+      height: 400px;
+      width: 280px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 40px;
+      box-shadow: 1px 1px 30px aquamarine,
+      1px 2px 20px greenyellow;
+      animation: d1 2s infinite;
+      animation-timing-function: ease-in-out;
+      animation-direction: alternate-reverse;
+      margin-top: 20px;
+    }
+    @keyframes d1 {
+      from{box-shadow: 1px 1px 30px aquamarine,
+        1px 2px 20px greenyellow;}
+        to{
+          box-shadow: 1px 1px 30px palevioletred,
+          1px 2px 20px red;
+        }
+    }
+
+    .photo{
+      height: 70px;
+      width: 70px;
+      background-size: cover;
+      border-radius: 50%;
+      background-image: url(github.jpg);
+      position: absolute;
+      top: 0;
+      margin-top: 20px;
+      box-shadow: 1px 1px 30px aqua,
+      1px 2px 30px greenyellow;
+    }
+    textarea{
+    height: 250px;
+    width: 250px;
+    resize: none;
+    border-radius: 10px;
+    background-color:rgb(208, 154, 255);
+    margin-top: 40px;
+    font-family: ita;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    }
+    button{
+      height: 40px;
+      margin-top: 20px;
+      width: 100px;
+      border-radius: 30px;
+      font-size: 20px;
+      background-color: black;
+      color: aqua;
+      box-shadow: 1px 1px 20px aqua,
+      1px 2px 10px greenyellow;
+      color: black;
+       background-color: greenyellow;
+      border: none;
+      transition-duration: 0.5s;
+    }
+    button:hover{
+      background-color: black;
+      color: aqua;
+    }
+  }
+  </style>
+</head>
+<body bgcolor="black">
+  <div class="main">
+    <div class="photo"></div>
+  <textarea
+    id="input"
+    rows="10"
+    cols="20"
+    placeholder="write anything you want"
+  ></textarea>
+ <button onclick="speak()">  <i class="fa-solid fa-play"></i> Listen </button>
+</div>
+    
+
+      <script>
+      function speak() {
+        var text = document.getElementById("input").value;
+        var text1 = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(text1);
+      }
+    </script>
+    
+
+  
+</body>
+</html>
+
